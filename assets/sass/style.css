@@ -1,6 +1,87 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  background-image: url();
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap");
+body {
+  background-color: #000000;
+}
+
+.container {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+nav img {
+  height: 45px;
+}
+nav ul {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-decoration: none;
+  list-style: none;
+}
+nav ul a {
+  padding: 3px;
+  font-family: "Chakra Petch", sans-serif;
+  color: #FFFFFF;
+  text-decoration: none;
+  position: relative;
+}
+nav ul a:after, nav ul a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  transition: all 0.4s, opacity 0.1s 0.4s;
+  opacity: 0;
+}
+nav ul a:after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid #FFFFFF;
+  border-right: 2px solid #FFFFFF;
+}
+nav ul a:before {
+  top: 0;
+  left: 0;
+  border-left: 2px solid #FFFFFF;
+  border-top: 2px solid #FFFFFF;
+}
+nav ul a:hover:before, nav ul a:hover:after {
+  width: 100%;
+  height: 100%;
+  transition: 0.4s, opacity 0.1s;
+  opacity: 1;
+}
+
+section .button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+section .button {
+  font-family: "Chakra Petch", sans-serif;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  padding: 20px 40px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 30px;
+  font-weight: 600;
+  transition: 0.5s;
+}
+section .button-1 {
+  color: #ff631a;
+  border: 1px solid #ff631a;
+}
+section .button-1:hover {
+  color: #FFFFFF;
+  background-color: #ff631a;
 }/*# sourceMappingURL=style.css.map */

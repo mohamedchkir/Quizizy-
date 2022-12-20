@@ -59,10 +59,20 @@ nav ul a:hover:before, nav ul a:hover:after {
 
 section .button-container {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 30px;
   justify-content: center;
   align-items: center;
   width: 100%;
   min-height: 100vh;
+}
+section input {
+  width: 57%;
+  padding: 15px;
+  border-radius: 13px;
+  border: solid 3px #ff631a;
+  box-shadow: 0px 0px 31px 3px rgba(255, 91, 9, 0.56);
 }
 section .button {
   font-family: "Chakra Petch", sans-serif;
@@ -70,7 +80,7 @@ section .button {
      -moz-appearance: none;
           appearance: none;
   cursor: pointer;
-  padding: 20px 40px;
+  padding: 9px 30px;
   border-radius: 10px;
   color: #FFFFFF;
   font-size: 30px;

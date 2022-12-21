@@ -1,15 +1,18 @@
-function GetQuestios() {
+fetch("http://localhost:3000/quiz")
+    .then((data) => data.json())
+    .then((data) => addtohtml(data))
 
-    let myrequest = new XMLHttpRequest();
 
-    myrequest.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 200) {
-            console.log(this.responseText);
-        }
-    }
-
-    myrequest.open("GET", "data.json", true);
-    myrequest.send();
-
+function addtohtml(data) {
+    let output = "";
+    data.forEach(ele => {
+        ele.questions.forEach((qst) => {
+            let temp = `
+            <h3>${qst.content}</h3>
+            <p>${qst.options[0].content}</p>
+            `
+            output += temp
+        })
+    });
+    document.body.innerHTML += output
 }
-GetQuestios();

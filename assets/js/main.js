@@ -11,8 +11,10 @@ var interval;
 let index = 0;
 const next_btn = document.getElementById("next")
 console.log(next_btn)
-// const miniteur = document.querySelector(".seconds")
-// console.log(miniteur)
+const miniteur = document.querySelector(".seconds")
+const questi = document.querySelector(".count")
+
+console.log(miniteur)
 
 // function timer() {
 
@@ -28,9 +30,11 @@ console.log(next_btn)
 
 // submit
 next_btn.addEventListener("click", function (e) {
+
     clearInterval(interval);
     afficher_question(DATA.questions[index]);
     index++;
+
 
     // e.preventDefault();
     // time = 0;
@@ -39,17 +43,21 @@ next_btn.addEventListener("click", function (e) {
 })
 
 function timer() {
-    let seconds = 30;
+    let seconds = 3;
 
     // timer 
     if (seconds > 0) {
         interval = setInterval(() => {
             console.log(seconds);
+            miniteur.innerText = "You have" + " " + seconds + " " + "To answer to the question";
             seconds--;
 
-            if (seconds == 0) {
+
+
+            if (seconds <= 0) {
                 clearInterval(interval);
                 index++;
+
                 afficher_question(DATA.questions[index]);
             }
         }, 1000);
@@ -87,17 +95,17 @@ function addtohtml(data) {
 
 
 function afficher_question(question) {
+
+
     // check index == 10 
+    if (index == 10) {
+        clearInterval(interval);
+        return;
+    }
     timer();
-    // <h3>${question.content}</h3>
-    //         <p>${question.options[0].content}</p>
-    //         <p>${question.options[1].content}</p>
-    //         <p>${question.options[2].content}</p>
-    //         <p>${question.options[3].content}</p>
     console.log(question)
     let output = `
             
-           
             <div class="quiz-area">
             <h2>${question.content}</h2>
           </div>
@@ -120,6 +128,8 @@ function afficher_question(question) {
             </div>
           </div>
     
-    `;
+          
+          `;
+
     document.querySelector("#question").innerHTML = output;
 }

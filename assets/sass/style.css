@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap");
 body {
-  background-color: #000000;
+  background-image: url(../img/Meteor\ \(1\).svg);
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-size: 100% 100%;
 }
 
 .container {
@@ -86,6 +89,7 @@ section .button {
   font-size: 30px;
   font-weight: 600;
   transition: 0.5s;
+  text-decoration: none;
 }
 section .button-1 {
   color: #ff631a;

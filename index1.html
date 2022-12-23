@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Quizizy™</title>
+    <link rel="stylesheet" href="assets\sass\style1.css" />
   </head>
   <body>
     <div class="quiz-app">
@@ -10,46 +11,45 @@
         <div class="category">Category: <span>AWS-QUIZ</span></div>
         <div class="count"><span>10</span></div>
       </div>
-      <div class="quiz-area">
-        <h2>Why is AWS more economical than traditional data centers for applications with varying compute workloads?</h2>
+      <div id="question">
+        <div class="quiz-area">
+          <h2>Why is AWS more economical than traditional data centers for applications with varying compute workloads?</h2>
+        </div>
+        <div class="answers-area">
+          <div class="answer">
+            <input type="radio" id="answer-1" name="questions" />
+            <label for="answer-1">Amazon EC2 costs are billed on a monthly basis</label>
+          </div>
+          <div class="answer">
+            <input type="radio" id="answer-2" name="questions" />
+            <label for="answer-2">Users retain full administrative access to their Amazon EC2 instances.</label>
+          </div>
+          <div class="answer">
+            <input type="radio" id="answer-3" name="questions" />
+            <label for="answer-3">Amazon EC2 costs are billed on a monthly basis</label>
+          </div>
+          <div class="answer">
+            <input type="radio" id="answer-4" name="questions" />
+            <label for="answer-4">Amazon EC2 costs are billed on a monthly basis</label>
+          </div>
+        </div>
       </div>
-      <div class="answers-area">
-        <div class="answer">
-          <input type="radio" id="answer-1" name="questions" />
-          <label for="answer-1">Amazon EC2 costs are billed on a monthly basis</label>
-        </div>
-        <div class="answer">
-          <input type="radio" id="answer-2" name="questions" />
-          <label for="answer-2">Users retain full administrative access to their Amazon EC2 instances.</label>
-        </div>
-        <div class="answer">
-          <input type="radio" id="answer-3" name="questions" />
-          <label for="answer-3">Amazon EC2 costs are billed on a monthly basis</label>
-        </div>
-        <div class="answer">
-          <input type="radio" id="answer-4" name="questions" />
-          <label for="answer-4">Amazon EC2 costs are billed on a monthly basis</label>
-        </div>
-      </div>
-      <button class="next">Submit</button>
+      <button type="button" class="next" id="next">Submit</button>
       <div class="bullets">
-        <div class="spans">
-          <script>
-            GetQuestios();
-          </script>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
         <div class="contdown">
-          <span class="seconds">30s</span>
+          <span class="seconds"></span>
+        </div>
+        <div class="spans">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </div>

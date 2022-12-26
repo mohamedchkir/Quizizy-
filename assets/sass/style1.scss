@@ -1,0 +1,190 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap');
+
+//VARIABLES
+
+$color1:#000000;
+$color2:#FFFFFF;
+$color3:#ff631a;
+$color4:#fffffff0;
+$font:'Chakra Petch', sans-serif;
+$main-color: #7ea8b6;
+$second-color: #ADA2FF;
+$third-color: #A8A4CE;
+$quad-color: #C8B6E2;
+$list-stepper: ["Guide", "Questions", "Result"];
+
+//MIXINS
+@mixin div-design{
+    background-color: $color4;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 50%;
+    margin: auto;
+  }
+
+  @mixin after-before($content, $color, $bg-color, $width, $height, $radius){
+    content: $content;
+    position: absolute;
+    color: $color;
+    background-color: $bg-color;
+    width: $width;
+    height: $height;
+    border-radius: $radius;
+  }
+
+body{
+    background-image: url(../img/layered-peaks-haikei\ \(1\).png);
+    background-repeat: no-repeat;  
+    background-position: 0% 0%;
+    background-size: 100vw 100vh;
+    
+}
+
+div{
+    h2,h4,.seconds,label{
+        font-family: $font;
+        color: $color2;
+    }
+}
+#boutton{
+    display: flex;
+    justify-content: flex-end;
+}
+  
+button{
+    border: 0;
+    max-width: 60px;
+    padding: 3px;
+    font-family: $font;
+    color: $color3;
+    text-decoration: none;
+    position: relative;
+    margin: 6px;
+    cursor: pointer;
+}
+button:after, button:before{
+content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    transition: all 0.4s, opacity 0.1s 0.4s;
+    opacity: 0;
+}
+button:after{
+    bottom: 0;
+    right: 0;
+    border-bottom: 3px solid $color3;
+    border-right: 3px solid $color3;
+}
+button:before{
+    top: 0;
+    left: 0;
+    border-left:3px solid $color3;
+    border-top: 3px solid $color3;
+
+}
+
+button:hover:before, button:hover:after{
+    width: 100%;
+    height: 100%;
+    transition: 0.4s, opacity 0.1s;
+    opacity: 1;
+
+}
+
+#guide{
+ @include div-design();
+   
+}
+.questions-guide{
+    h2,h4{
+        color: #000000;
+    }
+}
+
+.quiz-questions{
+    @include div-design();
+    background-color: $color3;
+    display: none;
+    
+    div{
+        .seconds{
+            color: $color3;
+        }
+        .quiz-area h2{
+            color: $color1;
+        }
+        .answers-area{
+            label{
+                color:$color1;
+            }
+        
+        }
+    }
+}
+
+
+
+//STEPPER
+:root {
+    --width-stepper: 0%;
+  }
+
+
+#stp{
+    display: flex;
+    justify-content: center;
+}
+
+.stepper {
+    width: 300px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+  
+    &::before {
+      @include after-before("", null, $color3, var(--width-stepper), 5px, 10px);
+      top: 7.5px;
+      left: 5px;
+      transition: all ease 0.5s;
+    }
+  
+    &::after {
+      @include after-before("", null, $color2, 100%, 5px, 10px);
+      top: 7.5px;
+      left: 5px;
+      z-index: -10;
+    }
+  
+    .step::before {
+      @include after-before("", null, $color2, 20px, 20px, 50%);
+    }
+  
+    @for $i from 1 through 3 {
+      .step-#{$i} {
+        position: relative;
+  
+        &::after {
+          content: nth($list-stepper, $i);
+          position: absolute;
+          color: $color2;
+          top: 25px;
+          left: -25px + $i * 4;
+        }
+      }
+    }
+  
+    > .active {
+      &::before {
+        transition: all ease 0.5s;
+        background-color: $color3;
+      }
+  
+      &::after {
+        transition: all ease 0.5s;
+        color: $color2;
+      }
+    }
+  }

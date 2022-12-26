@@ -3,12 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <title>Quizizy™</title>
-    <link rel="stylesheet" href="assets\sass\style1.css" />
+    <link rel="stylesheet" href="assets/sass/style1.css" />
   </head>
   <body>
-    <div class="quiz-app">
+    <div id="stp">
+      <section class="stepper">
+        <span class="step step-1 active"></span>
+        <span class="step step-2"></span>
+        <span class="step step-3"></span>
+      </section>
+    </div>
+
+    <div id="guide" class="questions-guide">
+      <h2>Quiz Guide</h2>
+      <h4>1. After select your answer submit it</h4>
+      <h4>2. you'il get pointd on the basic of your correct answers</h4>
+      <h4>3.you can't Exit from the quiz while you are playing</h4>
+      <div id="boutton">
+        <button id="btn-exit" class="button button-1">Exit</button>
+        <button id="btn-play" class="button button-1">Play</button>
+      </div>
+    </div>
+    <div class="quiz-questions">
       <div class="contdown">
-        <span class="seconds"></span>
+        <span class="seconds">You have</span>
       </div>
       <div class="quiz-info">
         <div class="category"><span></span></div>

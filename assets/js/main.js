@@ -1,10 +1,10 @@
 let DATA;
 
 fetch("http://localhost:3000/quiz/1")
-    .then((data) => data.json())
-    .then((data) => {
-        DATA = data;
-    })
+  .then((data) => data.json())
+  .then((data) => {
+    DATA = data;
+  })
 
 var time = 0;
 var interval;
@@ -31,39 +31,39 @@ console.log(miniteur)
 // submit
 next_btn.addEventListener("click", function (e) {
 
-    clearInterval(interval);
-    afficher_question(DATA.questions[index]);
-    index++;
+  clearInterval(interval);
+  afficher_question(DATA.questions[index]);
+  index++;
 
 
-    // e.preventDefault();
-    // time = 0;
-    // clearInterval(interval)
-    // interval = setInterval(timer, 1000);
+  // e.preventDefault();
+  // time = 0;
+  // clearInterval(interval)
+  // interval = setInterval(timer, 1000);
 })
 
 function timer() {
-    let seconds = 3;
+  let seconds = 30;
 
-    // timer 
-    if (seconds > 0) {
-        interval = setInterval(() => {
-            console.log(seconds);
-            miniteur.innerText = "You have" + " " + seconds + " " + "To answer to the question";
-            seconds--;
+  // timer 
+  if (seconds > 0) {
+    interval = setInterval(() => {
+      console.log(seconds);
+      miniteur.innerText = "You have" + " " + seconds;
+      seconds--;
 
 
 
-            if (seconds <= 0) {
-                clearInterval(interval);
-                index++;
+      if (seconds <= 0) {
+        clearInterval(interval);
+        index++;
 
-                afficher_question(DATA.questions[index]);
-            }
-        }, 1000);
-    } else {
+        afficher_question(DATA.questions[index]);
+      }
+    }, 1000);
+  } else {
 
-    }
+  }
 }
 
 
@@ -71,23 +71,23 @@ function timer() {
 
 
 function addtohtml(data) {
-    console.log(data)
+  console.log(data)
 
-    // data.forEach(ele => {
+  // data.forEach(ele => {
 
-    //     ele.questions.forEach((qst) => {
-    //         let temp = `
-    //         <h3>${qst.content}</h3>
-    //         <p>${qst.options[0].content}</p>
-    //         <p>${qst.options[1].content}</p>
-    //         <p>${qst.options[2].content}</p>
-    //         <p>${qst.options[3].content}</p>
-    //         `
-    //         output += temp
-    //     })
+  //     ele.questions.forEach((qst) => {
+  //         let temp = `
+  //         <h3>${qst.content}</h3>
+  //         <p>${qst.options[0].content}</p>
+  //         <p>${qst.options[1].content}</p>
+  //         <p>${qst.options[2].content}</p>
+  //         <p>${qst.options[3].content}</p>
+  //         `
+  //         output += temp
+  //     })
 
-    // });
-    // let index = 0;
+  // });
+  // let index = 0;
 
 }
 
@@ -97,14 +97,14 @@ function addtohtml(data) {
 function afficher_question(question) {
 
 
-    // check index == 10 
-    if (index == 10) {
-        clearInterval(interval);
-        return;
-    }
-    timer();
-    console.log(question)
-    let output = `
+  // check index == 10 
+  if (index == 10) {
+    clearInterval(interval);
+    return;
+  }
+  timer();
+  console.log(question)
+  let output = `
             
             <div class="quiz-area">
             <h2>${question.content}</h2>
@@ -131,5 +131,32 @@ function afficher_question(question) {
           
           `;
 
-    document.querySelector("#question").innerHTML = output;
+  document.querySelector("#question").innerHTML = output;
+}
+
+
+
+function starQuiz(e) {
+  e.preventDefault();
+
+  let username = document.getElementById("username").value;
+  document.getElementById("username").innerHTML = `Hello ${username}`;
+
+  if (username = "") {
+    document.getElementById("empty-input").innerHTML = "Please Enter your Username";
+
+  }
+}
+
+
+
+// a condition switch div class namein none 
+const r = document.querySelector(':root');
+const BTN_PLAY = document.querySelector('#btn-play')
+BTN_PLAY.onclick = () => {
+  // next_question();
+  r.style.setProperty('--width-stepper', '50%');
+  document.querySelector('.step-2').classList.add('active');
+  // APP.querySelector('.information').classList.add('none');
+  // APP.querySelector('.questions').classList.remove('none');
 }

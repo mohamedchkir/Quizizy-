@@ -7,12 +7,9 @@ $color1:#000000;
 $color2:#FFFFFF;
 $color3:#ff631a;
 $color4:#fffffff0;
-$font:'Chakra Petch', sans-serif;
-$main-color: #7ea8b6;
-$second-color: #ADA2FF;
-$third-color: #A8A4CE;
-$quad-color: #C8B6E2;
-$list-stepper: ["Guide", "Questions", "Result"];
+$font1:'Chakra Petch', sans-serif;
+$font2:'Quantico', sans-serif;
+$list-stepper:"Guide", "Questions", "Result";
 
 //MIXINS
 @mixin div-design{
@@ -41,9 +38,21 @@ body{
     
 }
 
-div{
-    h2,h4,.seconds,label{
-        font-family: $font;
+#question{
+  
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    
+    h2{
+      justify-content: center;
+        color: $color2;
+        font-family: $font2;
+    }
+    h4,label{
+        font-family: $font1;
         color: $color2;
     }
 }
@@ -56,7 +65,7 @@ button{
     border: 0;
     max-width: 60px;
     padding: 3px;
-    font-family: $font;
+    font-family: $font1;
     color: $color3;
     text-decoration: none;
     position: relative;
@@ -106,10 +115,15 @@ button:hover:before, button:hover:after{
 .quiz-questions{
     @include div-design();
     background-color: $color3;
+     .contdown{
+      display: flex;
+      justify-content: space-between;
+      color: #FFF;
+     }
     
     div{
         .seconds{
-            color: $color3;
+            color: $color2;
         }
         .quiz-area h2{
             color: $color1;
@@ -192,3 +206,4 @@ button:hover:before, button:hover:after{
   .none{
     display: none;
   }
+

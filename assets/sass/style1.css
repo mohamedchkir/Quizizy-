@@ -6,7 +6,17 @@ body {
   background-size: 100vw 100vh;
 }
 
-div h2, div h4, div .seconds, div label {
+#question {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#question h2 {
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: "Quantico", sans-serif;
+}
+#question h4, #question label {
   font-family: "Chakra Petch", sans-serif;
   color: #FFFFFF;
 }
@@ -78,8 +88,13 @@ button:hover:before, button:hover:after {
   margin: auto;
   background-color: #ff631a;
 }
+.quiz-questions .contdown {
+  display: flex;
+  justify-content: space-between;
+  color: #FFF;
+}
 .quiz-questions div .seconds {
-  color: #ff631a;
+  color: #FFFFFF;
 }
 .quiz-questions div .quiz-area h2 {
   color: #000000;

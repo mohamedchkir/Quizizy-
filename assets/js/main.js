@@ -14,7 +14,7 @@ const next_btn = document.getElementById("next")
 const miniteur = document.querySelector(".seconds")
 const questi = document.querySelector(".count")
 
-console.log(miniteur)
+// console.log(miniteur)
 
 // function timer() {
 
@@ -30,10 +30,9 @@ console.log(miniteur)
 
 // submit
 next_btn.addEventListener("click", function (e) {
-
+  check()
   clearInterval(interval);
   afficher_question(DATA.questions[index]);
-  index++;
 
 
   // e.preventDefault();
@@ -43,7 +42,7 @@ next_btn.addEventListener("click", function (e) {
 })
 
 function timer() {
-  let seconds = 30;
+  let seconds = 5;
 
   // timer 
   if (seconds > 0) {
@@ -54,9 +53,9 @@ function timer() {
 
 
 
-      if (seconds <= 0) {
+      if (seconds < 0) {
         clearInterval(interval);
-        index++;
+
 
         afficher_question(DATA.questions[index]);
       }
@@ -96,11 +95,14 @@ function addtohtml(data) {
 
 function afficher_question(question) {
 
-
+  console.log(index);
   // check index == 10 
-  if (index == 10) {
+  if (index >= 10) {
+    console.log(list);
     clearInterval(interval);
     return;
+  } else {
+    document.querySelector('#quest-num').textContent = (index + 1) + ' / 10';
   }
   timer();
   console.log(question)
@@ -111,19 +113,19 @@ function afficher_question(question) {
           </div>
           <div class="answers-area">
             <div class="answer">
-              <input type="radio" id="answer-1" name="questions" />
+              <input type="radio" id="answer-1" name="questions" value="${question.options[0].content}"/>
               <label for="answer-1">${question.options[0].content}</label>
             </div>
             <div class="answer">
-              <input type="radio" id="answer-2" name="questions" />
+              <input type="radio" id="answer-2" name="questions"value="${question.options[1].content}" />
               <label for="answer-2">${question.options[1].content}</label>
             </div>
             <div class="answer">
-              <input type="radio" id="answer-3" name="questions" />
+              <input type="radio" id="answer-3" name="questions" value="${question.options[2].content}"/>
               <label for="answer-3">A${question.options[2].content}</label>
             </div>
             <div class="answer">
-              <input type="radio" id="answer-4" name="questions" />
+              <input type="radio" id="answer-4" name="questions" value="${question.options[3].content}"/>
               <label for="answer-4">${question.options[3].content}</label>
             </div>
           </div>
@@ -132,8 +134,14 @@ function afficher_question(question) {
           `;
 
   document.querySelector("#question").innerHTML = output;
+  index++;
 }
 
+
+document.querySelector('#lets').onclick = () => {
+  console.log('gg');
+  window.location = "index1.html";
+}
 
 
 function starQuiz(e) {
@@ -162,4 +170,35 @@ BTN_PLAY.onclick = () => {
   document.querySelector('.step-2').classList.add('active');
   quiz.querySelector('#guide').classList.add('none');
   quiz.querySelector('.quiz-questions').classList.remove('none');
+
+  clearInterval(interval);
+  afficher_question(DATA.questions[index]);
+}
+
+
+
+
+
+let list = []
+function check() {
+  console.log(index + 'fffff');
+  let val
+  let checks = document.getElementsByName('questions')
+
+
+  for (let i = 0; i < checks.length; i++) {
+
+    if (checks[i].checked) {
+
+
+      list.push({
+        "id-quest": DATA.questions[index - 1].id,
+        "id-checked": i + 1
+      })
+
+    }
+
+  }
+  console.log(list);
+
 }

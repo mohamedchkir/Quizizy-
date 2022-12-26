@@ -13,49 +13,50 @@
         <span class="step step-3"></span>
       </section>
     </div>
-
-    <div id="guide" class="questions-guide">
-      <h2>Quiz Guide</h2>
-      <h4>1. After select your answer submit it</h4>
-      <h4>2. you'il get pointd on the basic of your correct answers</h4>
-      <h4>3.you can't Exit from the quiz while you are playing</h4>
-      <div id="boutton">
-        <button id="btn-exit" class="button button-1">Exit</button>
-        <button id="btn-play" class="button button-1">Play</button>
-      </div>
-    </div>
-    <div class="quiz-questions">
-      <div class="contdown">
-        <span class="seconds">You have</span>
-      </div>
-      <div class="quiz-info">
-        <div class="category"><span></span></div>
-        <div class="count"><span></span></div>
-      </div>
-      <div id="question">
-        <div class="quiz-area">
-          <h2>Why is AWS more economical than traditional data centers for applications with varying compute workloads?</h2>
-        </div>
-        <div class="answers-area">
-          <div class="answer">
-            <input type="radio" id="answer-1" name="questions" />
-            <label for="answer-1">Amazon EC2 costs are billed on a monthly basis</label>
-          </div>
-          <div class="answer">
-            <input type="radio" id="answer-2" name="questions" />
-            <label for="answer-2">Users retain full administrative access to their Amazon EC2 instances.</label>
-          </div>
-          <div class="answer">
-            <input type="radio" id="answer-3" name="questions" />
-            <label for="answer-3">Amazon EC2 costs are billed on a monthly basis</label>
-          </div>
-          <div class="answer">
-            <input type="radio" id="answer-4" name="questions" />
-            <label for="answer-4">Amazon EC2 costs are billed on a monthly basis</label>
-          </div>
+    <div class="quiz-app">
+      <div id="guide" class="questions-guide">
+        <h2>Quiz Guide</h2>
+        <h4>1. After select your answer submit it</h4>
+        <h4>2. You have only 30 seconds per each question</h4>
+        <h4>3.You can't Exit from the quiz while you are playing</h4>
+        <div id="boutton">
+          <button id="btn-exit" class="button button-1">Exit</button>
+          <button id="btn-play" class="button button-1">Play</button>
         </div>
       </div>
-      <button type="button" class="next" id="next">Submit</button>
+      <div class="quiz-questions none">
+        <div class="contdown">
+          <span class="seconds">You have</span>
+        </div>
+        <div class="quiz-info">
+          <div class="category"><span></span></div>
+          <div class="count"><span></span></div>
+        </div>
+        <div id="question">
+          <div class="quiz-area">
+            <h2>Why is AWS more economical than traditional data centers for applications with varying compute workloads?</h2>
+          </div>
+          <div class="answers-area">
+            <div class="answer">
+              <input type="radio" id="answer-1" name="questions" />
+              <label for="answer-1">Amazon EC2 costs are billed on a monthly basis</label>
+            </div>
+            <div class="answer">
+              <input type="radio" id="answer-2" name="questions" />
+              <label for="answer-2">Users retain full administrative access to their Amazon EC2 instances.</label>
+            </div>
+            <div class="answer">
+              <input type="radio" id="answer-3" name="questions" />
+              <label for="answer-3">Amazon EC2 costs are billed on a monthly basis</label>
+            </div>
+            <div class="answer">
+              <input type="radio" id="answer-4" name="questions" />
+              <label for="answer-4">Amazon EC2 costs are billed on a monthly basis</label>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="next" id="next">Submit</button>
+      </div>
     </div>
   </body>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

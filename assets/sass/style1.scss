@@ -106,7 +106,6 @@ button:hover:before, button:hover:after{
 .quiz-questions{
     @include div-design();
     background-color: $color3;
-    display: none;
     
     div{
         .seconds{
@@ -187,4 +186,9 @@ button:hover:before, button:hover:after{
         color: $color2;
       }
     }
+  }
+
+//   CACHER LES DIVS
+  .none{
+    display: none;
   }

@@ -9,8 +9,8 @@ fetch("http://localhost:3000/quiz/1")
 var time = 0;
 var interval;
 let index = 0;
+const quiz = document.querySelector('.quiz-app');
 const next_btn = document.getElementById("next")
-console.log(next_btn)
 const miniteur = document.querySelector(".seconds")
 const questi = document.querySelector(".count")
 
@@ -152,11 +152,14 @@ function starQuiz(e) {
 
 // a condition switch div class namein none 
 const r = document.querySelector(':root');
-const BTN_PLAY = document.querySelector('#btn-play')
+const BTN_PLAY = document.querySelector('#btn-play');
+const letgo = document.querySelector(".lets")
+
+
 BTN_PLAY.onclick = () => {
-  // next_question();
+
   r.style.setProperty('--width-stepper', '50%');
   document.querySelector('.step-2').classList.add('active');
-  // APP.querySelector('.information').classList.add('none');
-  // APP.querySelector('.questions').classList.remove('none');
+  quiz.querySelector('#guide').classList.add('none');
+  quiz.querySelector('.quiz-questions').classList.remove('none');
 }

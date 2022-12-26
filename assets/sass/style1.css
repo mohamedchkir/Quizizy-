@@ -77,7 +77,6 @@ button:hover:before, button:hover:after {
   max-width: 50%;
   margin: auto;
   background-color: #ff631a;
-  display: none;
 }
 .quiz-questions div .seconds {
   color: #ff631a;
@@ -172,4 +171,8 @@ button:hover:before, button:hover:after {
 .stepper > .active::after {
   transition: all ease 0.5s;
   color: #FFFFFF;
+}
+
+.none {
+  display: none;
 }/*# sourceMappingURL=style1.css.map */

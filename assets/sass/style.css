@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap");
 body {
-  background-image: url(../img/layered-peaks-haikei.png);
+  background-image: url(../img/layered-peaks-haikei\ \(1\).svg);
   background-repeat: no-repeat;
   background-position: 0% 0%;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 
 .container {
@@ -98,8 +98,4 @@ section .button-1 {
 section .button-1:hover {
   color: #FFFFFF;
   background-color: #ff631a;
-}
-
-.none {
-  display: none;
 }/*# sourceMappingURL=style.css.map */

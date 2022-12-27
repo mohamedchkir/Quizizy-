@@ -7,6 +7,7 @@ $color1:#000000;
 $color2:#FFFFFF;
 $color3:#ff631a;
 $color4:#fffffff0;
+$color5:#cfcfcff0;
 $font1:'Chakra Petch', sans-serif;
 $font2:'Quantico', sans-serif;
 $list-stepper:"Guide", "Questions", "Result";
@@ -31,7 +32,7 @@ $list-stepper:"Guide", "Questions", "Result";
   }
 
 body{
-    background-image: url(../img/layered-peaks-haikei\ \(1\).png);
+    background-image: url(../img/Meteor\ \(1\).svg);
     background-repeat: no-repeat;  
     background-position: 0% 0%;
     background-size: 100vw 100vh;
@@ -44,21 +45,48 @@ body{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        
-    
+      
     h2{
       justify-content: center;
-        color: $color2;
+        color: $color1;
+        // font-size: large;
         font-family: $font2;
     }
     h4,label{
         font-family: $font1;
-        color: $color2;
+        color: $color3;
+    }
+    .answer{
+      background-color: $color5;
+    }
+    .answers-area{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 }
 #boutton{
     display: flex;
     justify-content: flex-end;
+}
+.next{
+  
+  max-width: 75px;
+  padding: 8px;
+  font-family: $font2;
+  color: $color2;
+  text-decoration: none;
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: $color3;
+  font-size: larger;
+  display: flex;
+  justify-content: end;
+}
+.next:hover{
+  background-color: #ff631a;
+  color: #FFFFFF;
 }
   
 button{
@@ -103,36 +131,28 @@ button:hover:before, button:hover:after{
 }
 
 #guide{
- @include div-design();
-   
+@include div-design();
+
 }
 .questions-guide{
     h2,h4{
-        color: #000000;
+        color:$color1;
     }
 }
 
 .quiz-questions{
     @include div-design();
-    background-color: $color3;
-     .contdown{
+    background-color: $color4;
+    .contdown{
       display: flex;
       justify-content: space-between;
-      color: #FFF;
-     }
-    
+      color:$color1;
+      font-family: $font1;
+      font-size: x-large;
+}
     div{
         .seconds{
-            color: $color2;
-        }
-        .quiz-area h2{
-            color: $color1;
-        }
-        .answers-area{
-            label{
-                color:$color1;
-            }
-        
+            color: $color3;
         }
     }
 }
@@ -205,5 +225,11 @@ button:hover:before, button:hover:after{
 //   CACHER LES DIVS
   .none{
     display: none;
+  }
+
+
+  //* RESULTS PART STYLLING
+  .result{
+    background-color: $color2;
   }
 

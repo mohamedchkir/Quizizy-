@@ -8,10 +8,11 @@ $color3:#ff631a;
 $font:'Chakra Petch', sans-serif;
 
 body{
-    background-image: url(../img/layered-peaks-haikei.png);
+    background-image: url(../img/layered-peaks-haikei\ \(1\).svg);
     background-repeat: no-repeat;  
     background-position: 0% 0%;
-    background-size: 100% 100%;
+    background-size: cover;
+    
     
 }
 .container{
@@ -114,9 +115,7 @@ input{
     background-color:$color3;
 }
   }
-.none{
-    display:none;
-}
+
 
 
   

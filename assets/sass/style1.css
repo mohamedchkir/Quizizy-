@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap");
 body {
-  background-image: url(../img/layered-peaks-haikei\ \(1\).png);
+  background-image: url(../img/Meteor\ \(1\).svg);
   background-repeat: no-repeat;
   background-position: 0% 0%;
   background-size: 100vw 100vh;
@@ -13,17 +13,45 @@ body {
 }
 #question h2 {
   justify-content: center;
-  color: #FFFFFF;
+  color: #000000;
   font-family: "Quantico", sans-serif;
 }
 #question h4, #question label {
   font-family: "Chakra Petch", sans-serif;
-  color: #FFFFFF;
+  color: #ff631a;
+}
+#question .answer {
+  background-color: rgba(207, 207, 207, 0.9411764706);
+}
+#question .answers-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 #boutton {
   display: flex;
   justify-content: flex-end;
+}
+
+.next {
+  max-width: 75px;
+  padding: 8px;
+  font-family: "Quantico", sans-serif;
+  color: #FFFFFF;
+  text-decoration: none;
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #ff631a;
+  font-size: larger;
+  display: flex;
+  justify-content: end;
+}
+
+.next:hover {
+  background-color: #ff631a;
+  color: #FFFFFF;
 }
 
 button {
@@ -86,21 +114,17 @@ button:hover:before, button:hover:after {
   padding: 10px;
   max-width: 50%;
   margin: auto;
-  background-color: #ff631a;
+  background-color: rgba(255, 255, 255, 0.9411764706);
 }
 .quiz-questions .contdown {
   display: flex;
   justify-content: space-between;
-  color: #FFF;
+  color: #000000;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: x-large;
 }
 .quiz-questions div .seconds {
-  color: #FFFFFF;
-}
-.quiz-questions div .quiz-area h2 {
-  color: #000000;
-}
-.quiz-questions div .answers-area label {
-  color: #000000;
+  color: #ff631a;
 }
 
 :root {
@@ -190,4 +214,8 @@ button:hover:before, button:hover:after {
 
 .none {
   display: none;
+}
+
+.result {
+  background-color: #FFFFFF;
 }/*# sourceMappingURL=style1.css.map */

@@ -13,19 +13,6 @@ const next_btn = document.getElementById("next")
 const miniteur = document.querySelector(".seconds")
 const questi = document.querySelector(".count")
 const lets = document.getElementById("lets")
-// console.log(miniteur)
-
-// function timer() {
-
-//     if (time == 30) {
-//         clearInterval(interval)
-//         next_btn.click();
-
-//     } else {
-//         time++;
-//         miniteur.innerText = time;
-//     }
-// }
 
 //! submit
 next_btn.addEventListener("click", function (e) {
@@ -44,8 +31,7 @@ function timer() {
       miniteur.innerText = "You have" + " " + seconds;
       seconds--;
       if (seconds < 0) {
-        clearInterval(interval);
-        afficher_question(DATA.questions[index]);
+        next_btn.click();
       }
     }, 1000);
   } else {
@@ -60,6 +46,7 @@ function afficher_question(question) {
   if (index >= 10) {
     console.log(list);
     clearInterval(interval);
+
     endQuiz();
     return;
   } else {
@@ -111,32 +98,54 @@ BTN_PLAY.onclick = () => {
 
 }
 
-
-
-
-
 let list = []
 function check() {
 
-  let val = null;
   let checks = document.getElementsByName('questions')
-
   let obj = {
-    "id-quest": DATA.questions[index - 1].id,
-    "id-checked": 999
+    "id_quest": DATA.questions[index - 1].id,
+    "id_checked": 999
   };
   for (let i = 0; i < checks.length; i++) {
     if (checks[i].checked) {
-      obj["id-checked"] = i + 1;
+      obj["id_checked"] = i + 1;
     }
   }
   list.push(obj)
   console.log(list);
 }
-
+let score = 0;
 function checkAnswers() {
-  for (let i = 0; i < list.length; i++) {
-    console.log(list[i]);
+  let result = document.querySelector('.result');
+  result.innerHTML = '';
+  for (let i = 0; i < DATA.questions.length; i++) { // lister les question 
+    let className = '';
+    if (DATA.questions[i].answer.correct == list[i].id_checked) {
+      className = 'sucess';
+    } else {
+      className = 'wrong'
+    }
+    result.innerHTML += `<div id="question">
+    <div class="quiz-area">
+      <h2>${DATA.questions[i]['content']}</h2>
+    </div>
+    <div class="answers-area">
+      <div class="answer ${list[i].id_checked == 1 ? className : ''} ${DATA.questions[i].answer.correct == 1 ? 'sucess' : ''}">
+        <p class="result-option ">${DATA.questions[i]['options'][0]['content']}</p>
+      </div>
+      <div class="answer ${list[i].id_checked == 2 ? className : ''} ${DATA.questions[i].answer.correct == 2 ? 'sucess' : ''}">
+        <p class="result-option ">${DATA.questions[i]['options'][1]['content']}</p>
+      </div>
+      <div class="answer ${list[i].id_checked == 3 ? className : ''} ${DATA.questions[i].answer.correct == 3 ? 'sucess' : ''}">
+        <p class="result-option ">${DATA.questions[i]['options'][2]['content']}</p>
+      </div>
+      <div class="answer ${list[i].id_checked == 4 ? className : ''} ${DATA.questions[i].answer.correct == 4 ? 'sucess' : ''}">
+        <p class="result-option ">${DATA.questions[i]['options'][3]['content']}</p>
+      </div>
+      ${(list[i].id_checked == 999) ? "<p class='noAnswer'> No answers ! <br> </p>" : ''}
+      <p class="Descriptions ">${DATA.questions[i].answer.comment}</p>
+    </div>
+  </div>`;
 
   }
 }
@@ -148,18 +157,9 @@ function endQuiz() {
   document.querySelector('.step-3').classList.add('active');
   quiz.querySelector('.quiz-questions').classList.add('none');
   document.querySelector('.result').classList.remove('none');
-
+  checkAnswers();
 
 }
-
-
-// lets.addEventListener("click", function (e) {
-//   let username = document.getElementById("username").value
-//   alert(username)
-//   sessionStorage.setItem("user", document.getElementById("username").value);
-//   let name = sessionStorage.getItem("user");
-
-// })
 
 // ! USERNAME 
 function getname() {
@@ -167,7 +167,6 @@ function getname() {
 }
 let name = sessionStorage.getItem("user");
 document.getElementById("username").innerText = `Hello ` + name;
-
 
 
 

@@ -16,12 +16,22 @@ body {
   color: #000000;
   font-family: "Quantico", sans-serif;
 }
+#question .result-option {
+  padding-left: 10px;
+  font-family: "Chakra Petch", sans-serif;
+  color: #ff631a;
+}
 #question h4, #question label {
   font-family: "Chakra Petch", sans-serif;
   color: #ff631a;
 }
 #question .answer {
   background-color: rgba(207, 207, 207, 0.9411764706);
+  border-radius: 8px;
+  border: #000000 1px;
+  height: 55px;
+  align-items: center;
+  display: flex;
 }
 #question .answers-area {
   display: flex;
@@ -96,12 +106,28 @@ button:hover:before, button:hover:after {
   opacity: 1;
 }
 
+.result {
+  background-color: rgba(255, 255, 255, 0.9411764706);
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 50%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.9411764706);
+  max-width: 90%;
+}
+
 #guide {
   background-color: rgba(255, 255, 255, 0.9411764706);
   border-radius: 10px;
   padding: 10px;
   max-width: 50%;
   margin: auto;
+  padding: 25px;
+  max-width: 80%;
+}
+
+.guideElem {
+  padding: 25px;
 }
 
 .questions-guide h2, .questions-guide h4 {
@@ -137,7 +163,7 @@ button:hover:before, button:hover:after {
 }
 
 .stepper {
-  width: 300px;
+  width: 80%;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -216,6 +242,17 @@ button:hover:before, button:hover:after {
   display: none;
 }
 
-.result {
-  background-color: #FFFFFF;
+.answer.sucess {
+  background-color: #42855B !important;
+}
+
+.answer.wrong {
+  background-color: #E64848 !important;
+}
+
+.false {
+  background-color: #d30707 !important;
+}
+.false p {
+  color: #FFFFFF !important;
 }/*# sourceMappingURL=style1.css.map */

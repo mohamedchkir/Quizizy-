@@ -8,6 +8,8 @@ $color2:#FFFFFF;
 $color3:#ff631a;
 $color4:#fffffff0;
 $color5:#cfcfcff0;
+$true:#059300;
+$false:#d30707;
 $font1:'Chakra Petch', sans-serif;
 $font2:'Quantico', sans-serif;
 $list-stepper:"Guide", "Questions", "Result";
@@ -52,12 +54,22 @@ body{
         // font-size: large;
         font-family: $font2;
     }
+    .result-option{
+      padding-left: 10px;
+        font-family: $font1;
+        color: $color3;
+    }
     h4,label{
         font-family: $font1;
         color: $color3;
     }
     .answer{
       background-color: $color5;
+      border-radius: 8px;
+      border: #000000 1px;
+      height: 55px;
+      align-items: center;
+      display: flex;
     }
     .answers-area{
       display: flex;
@@ -130,9 +142,20 @@ button:hover:before, button:hover:after{
 
 }
 
+.result{
+  @include div-design();
+  background-color: $color4;
+  max-width: 90%;
+}
+
 #guide{
 @include div-design();
+padding: 25px;
+max-width: 80%;
 
+}
+.guideElem{
+  padding: 25px;
 }
 .questions-guide{
     h2,h4{
@@ -140,7 +163,7 @@ button:hover:before, button:hover:after{
     }
 }
 
-.quiz-questions{
+.quiz-questions {
     @include div-design();
     background-color: $color4;
     .contdown{
@@ -171,7 +194,7 @@ button:hover:before, button:hover:after{
 }
 
 .stepper {
-    width: 300px;
+    width:80%;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -229,7 +252,18 @@ button:hover:before, button:hover:after{
 
 
   //* RESULTS PART STYLLING
-  .result{
-    background-color: $color2;
+  .answer.sucess {
+    background-color: #42855B !important;
+}
+.answer.wrong{
+  background-color: #E64848 !important;
+}
+  .false{
+    background-color: $false !important;
+    p{
+      color: $color2 !important;
+    }
   }
 
+
+  

@@ -19,7 +19,6 @@ next_btn.addEventListener("click", function (e) {
   check()
   clearInterval(interval);
   afficher_question(DATA.questions[index]);
-
 })
 
 //todo timer 
@@ -35,18 +34,14 @@ function timer() {
       }
     }, 1000);
   } else {
-
   }
 }
 
 function afficher_question(question) {
-
   console.log(index);
-
   if (index >= 10) {
     console.log(list);
     clearInterval(interval);
-
     endQuiz();
     return;
   } else {
@@ -54,8 +49,7 @@ function afficher_question(question) {
   }
   timer();
   console.log(question)
-  let output = `
-            
+  let output = `            
             <div class="quiz-area">
             <h2>${question.content}</h2>
           </div>
@@ -76,8 +70,7 @@ function afficher_question(question) {
               <input type="radio" id="answer-4" name="questions" value="${question.options[3].content}"/>
               <label for="answer-4">${question.options[3].content}</label>
             </div>
-          </div>
-          
+          </div>          
           `;
   document.querySelector("#question").innerHTML = output;
   index++;
@@ -88,7 +81,6 @@ const r = document.querySelector(':root');
 const BTN_PLAY = document.querySelector('#btn-play');
 
 BTN_PLAY.onclick = () => {
-
   r.style.setProperty('--width-stepper', '50%');
   document.querySelector('.step-2').classList.add('active');
   quiz.querySelector('.questions-guide').classList.add('none');
@@ -100,7 +92,6 @@ BTN_PLAY.onclick = () => {
 
 let list = []
 function check() {
-
   let checks = document.getElementsByName('questions')
   let obj = {
     "id_quest": DATA.questions[index - 1].id,
@@ -126,6 +117,10 @@ function checkAnswers() {
       className = 'wrong'
     }
     result.innerHTML += `<div id="question">
+    <div class="question">
+    <p class='noAnswer'> Question: !</p>
+    ${(list[i].id_checked == 999) ? "<p class='noAnswer'> No Answer !!! <br> </p>" : ''}
+    </div>
     <div class="quiz-area">
       <h2>${DATA.questions[i]['content']}</h2>
     </div>
@@ -142,11 +137,9 @@ function checkAnswers() {
       <div class="answer ${list[i].id_checked == 4 ? className : ''} ${DATA.questions[i].answer.correct == 4 ? 'sucess' : ''}">
         <p class="result-option ">${DATA.questions[i]['options'][3]['content']}</p>
       </div>
-      ${(list[i].id_checked == 999) ? "<p class='noAnswer'> No answers ! <br> </p>" : ''}
       <p class="Descriptions ">${DATA.questions[i].answer.comment}</p>
-    </div>
-  </div>`;
-
+      </div>
+      </div>`;
   }
 }
 
@@ -158,7 +151,6 @@ function endQuiz() {
   quiz.querySelector('.quiz-questions').classList.add('none');
   document.querySelector('.result').classList.remove('none');
   checkAnswers();
-
 }
 
 // ! USERNAME 

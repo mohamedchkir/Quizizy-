@@ -26,9 +26,8 @@ body {
   color: #ff631a;
 }
 #question .answer {
-  background-color: rgba(207, 207, 207, 0.9411764706);
+  background-color: #FFFFFF;
   border-radius: 8px;
-  border: #000000 1px;
   height: 55px;
   align-items: center;
   display: flex;
@@ -42,6 +41,7 @@ body {
 #boutton {
   display: flex;
   justify-content: flex-end;
+  gap: 3%;
 }
 
 .next {
@@ -66,13 +66,11 @@ body {
 
 button {
   border: 0;
-  max-width: 60px;
-  padding: 3px;
+  padding: 4px;
   font-family: "Chakra Petch", sans-serif;
   color: #ff631a;
   text-decoration: none;
   position: relative;
-  margin: 6px;
   cursor: pointer;
 }
 
@@ -127,11 +125,18 @@ button:hover:before, button:hover:after {
 }
 
 .guideElem {
-  padding: 25px;
+  padding-left: 5%;
+}
+.guideElem h4 {
+  font-family: monospace;
+  font-size: larger;
+  color: #000000;
 }
 
-.questions-guide h2, .questions-guide h4 {
-  color: #000000;
+.questions-guide h2 {
+  color: #ff631a;
+  font-size: revert;
+  font-family: "Chakra Petch", sans-serif;
 }
 
 .quiz-questions {
@@ -243,11 +248,11 @@ button:hover:before, button:hover:after {
 }
 
 .answer.sucess {
-  background-color: #42855B !important;
+  background-color: #5bbc7f !important;
 }
 
 .answer.wrong {
-  background-color: #E64848 !important;
+  background-color: #f04e4e !important;
 }
 
 .false {

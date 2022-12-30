@@ -64,9 +64,8 @@ body{
         color: $color3;
     }
     .answer{
-      background-color: $color5;
+      background-color: $color2;
       border-radius: 8px;
-      border: #000000 1px;
       height: 55px;
       align-items: center;
       display: flex;
@@ -80,6 +79,7 @@ body{
 #boutton{
     display: flex;
     justify-content: flex-end;
+    gap: 3%;
 }
 .next{
   
@@ -102,15 +102,13 @@ body{
 }
   
 button{
-    border: 0;
-    max-width: 60px;
-    padding: 3px;
-    font-family: $font1;
-    color: $color3;
-    text-decoration: none;
-    position: relative;
-    margin: 6px;
-    cursor: pointer;
+  border: 0;
+  padding: 4px;
+  font-family: "Chakra Petch", sans-serif;
+  color: #ff631a;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
 }
 button:after, button:before{
 content: '';
@@ -152,17 +150,22 @@ button:hover:before, button:hover:after{
 @include div-design();
 padding: 25px;
 max-width: 80%;
-
 }
 .guideElem{
-  padding: 25px;
+  padding-left: 5%;
+  h4{
+    font-family: monospace;
+    font-size: larger;
+    color: $color1;
+  }
 }
 .questions-guide{
-    h2,h4{
-        color:$color1;
+    h2{
+      color: $color3;
+      font-size: revert;
+      font-family: $font1;
     }
 }
-
 .quiz-questions {
     @include div-design();
     background-color: $color4;
@@ -180,13 +183,10 @@ max-width: 80%;
     }
 }
 
-
-
 //STEPPER
 :root {
     --width-stepper: 0%;
   }
-
 
 #stp{
     display: flex;
@@ -199,29 +199,24 @@ max-width: 80%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 80px;
-  
     &::before {
       @include after-before("", null, $color3, var(--width-stepper), 5px, 10px);
       top: 7.5px;
       left: 5px;
       transition: all ease 0.5s;
     }
-  
     &::after {
       @include after-before("", null, $color2, 100%, 5px, 10px);
       top: 7.5px;
       left: 5px;
       z-index: -10;
     }
-  
     .step::before {
       @include after-before("", null, $color2, 20px, 20px, 50%);
     }
-  
     @for $i from 1 through 3 {
       .step-#{$i} {
         position: relative;
-  
         &::after {
           content: nth($list-stepper, $i);
           position: absolute;
@@ -231,13 +226,11 @@ max-width: 80%;
         }
       }
     }
-  
     > .active {
       &::before {
         transition: all ease 0.5s;
         background-color: $color3;
       }
-  
       &::after {
         transition: all ease 0.5s;
         color: $color2;
@@ -250,13 +243,12 @@ max-width: 80%;
     display: none;
   }
 
-
   //* RESULTS PART STYLLING
   .answer.sucess {
-    background-color: #42855B !important;
+    background-color: #5bbc7f !important;
 }
 .answer.wrong{
-  background-color: #E64848 !important;
+  background-color: #f04e4e !important;
 }
   .false{
     background-color: $false !important;
@@ -264,6 +256,3 @@ max-width: 80%;
       color: $color2 !important;
     }
   }
-
-
-  
